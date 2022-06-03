@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th = "http://www.thymeleaf.org/">
+<head th:replace="fragments :: head"></head>
+<header th:replace="fragments2 :: headerNotIn"></header>
+
+<body class = "container">
+
+<div class="w3-display-container w3-opacity-min" id="home">
+    <div class="w3-display-middle" style="white-space:nowrap;">
+        <span class="w3-center w3-padding-large w3-black w3-xlarge w3-wide w3-animate-opacity">Generation <span class="w3-hide-small">Parent</span></span>
+    </div>
+</div>
+
+
+<div class="login">
+
+<form method = 'post' th:action="@{/login}">
+
+    <p class="loginHeader" align="center">Log In</p>
+
+    <div class="form-group">
+        <label th:for="username">Username
+            <input class="form-control" th:field="${loginFormDTO.username}">
+        </label>
+        <p class="error" th:errors="${loginFormDTO.username}"></p>
+    </div>
+
+    <div class="form-group">
+        <label>Password
+            <input class="form-control" th:field="${loginFormDTO.password}" type="password">
+        </label>
+        <p class="error" th:errors="${loginFormDTO.password}"></p>
+    </div>
+
+    <input type="submit" class="submit" align="center" value="Submit" />
+</form>
+
+<p class="registerLogin" align="center">Don't have an account? <a class="href" href="register">Register for one.</a></p>
+
+</div>
+
+
+</body>
+</html>

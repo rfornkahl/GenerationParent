@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head">
+</head>
+
+<body class = "container">
+
+<header th:replace="fragments2 :: headerSingedIn"></header>
+<header th:replace="fragments :: header"></header>
+
+
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Event Name</th>
+        </tr>
+        </thead>
+        <tr th:each="event : ${events}">
+            <td><a th:href="'/events/detail?eventId=' + ${event.id}" th:text="${event.name}"></a></td>
+        </tr>
+    </table>
+<!--Event with date and location-->
+<!--<table class="table table-striped">-->
+
+<!--    <thead>-->
+<!--    <tr>-->
+<!--        <th>ID</th>-->
+<!--        <th>Name</th>-->
+<!--        <th>Date</th>-->
+<!--        <th>Location</th>-->
+<!--        <th>Description</th>-->
+<!--        <th>Phone</th>-->
+<!--        <th>Email</th>-->
+<!--    </tr>-->
+<!--    </thead>-->
+<!--    <tr th:each ="event:${events}">-->
+<!--        <td><a th:href="'/events/detail?eventId=' + ${event.id}" th:text="${event.name}"></a></td>&ndash;&gt;-->
+<!--        <td th:text="${event.date}"></td>-->
+<!--        <td th:text="${#strings.setCapitalizeWords(event.location)}"></td>-->
+<!--        <td th:text="${#strings.capitalize(event.description)}"></td>-->
+<!--        <td th:text="${event.phone}"></td>-->
+<!--        <td th:text="${event.email}"></td>-->
+
+<!--    </tr>-->
+
+
+<!--</table>-->
+</div>
+</body>
+
+    <footer th:replace="fragments2 :: footer"></footer>
+
+</html>
